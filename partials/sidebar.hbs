@@ -40,6 +40,17 @@
                     {{/if}}
                 </section>
 
+                {{#if @site.recommendations_enabled}}
+                    <section class="gh-section">
+                        <h3 class="gh-section-title">Recommendations</h3>
+
+                        <div class="gh-recommendations">
+                            {{recommendations}}
+                            <button data-portal="recommendations">See all {{> "icons/arrow-right"}}</button>
+                        </div>
+                    </section>
+                {{/if}}
+  
                 <section class="gh-section">
                     <h2 class="gh-section-title">Polyring</h2>
                     <webring-banner>
@@ -79,14 +90,5 @@
                     </section>
                 {{/get}}
 
-                {{#if @site.recommendations_enabled}}
-                    <section class="gh-section">
-                        <h3 class="gh-section-title">Recommendations</h3>
-
-                        <div class="gh-recommendations">
-                            {{recommendations}}
-                            <button data-portal="recommendations">See all {{> "icons/arrow-right"}}</button>
-                        </div>
-                    </section>
-                {{/if}}
+                
             </aside>
