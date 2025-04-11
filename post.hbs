@@ -2,7 +2,9 @@
 
 {{#post}}
 
-<main id="gh-main" class="gh-main">
+<main id="gh-main" class="gh-main gh-outer">
+    <div class="gh-inner">
+    <div class="gh-wrapper">
     <article class="gh-article {{post_class}}">
 
         <header class="gh-article-header gh-canvas">
@@ -60,6 +62,10 @@
         </footer>
 
     </article>
+
+    {{> "sidebar"}}
+
+    </div></div>
 </main>
 
 {{/post}}
