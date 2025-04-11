@@ -9,13 +9,17 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: "npm"
-      - run: npm ci
+          cache: "pnpm"
 
-      - run: npm run zip
+      - run: pnpm i
+      - run: pnpm run zip
 
       - name: Deploy Ghost Theme
         uses: TryGhost/action-deploy-theme@v1
